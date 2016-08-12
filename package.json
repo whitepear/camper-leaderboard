@@ -1,0 +1,23 @@
+{
+  "name": "camper_leaderboard",
+  "version": "1.0.0",
+  "description": "FreeCodeCamp coursework: https://www.freecodecamp.com/challenges/build-a-camper-leaderboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whitepear/camper_leaderboard.git"
+  },
+  "keywords": [
+    "react",
+    "javascript",
+    "sass",
+    "html",
+    "css",
+    "freecodecamp"
+  ],
+  "author": "whitepear",
+  "license": "ISC"
+}
