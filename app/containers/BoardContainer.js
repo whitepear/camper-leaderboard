@@ -29,11 +29,16 @@ var BoardContainer = React.createClass({
 	},
 	render: function () {
 		return (
-			<div className="container">				
-				<Board 
-					isLoading={this.state.isLoading} 
-					fetchResults={this.state.fetchResults} 
-					onClickRequest={this.handleClickRequest} />
+			<div>
+				<div className="header">
+					<img src="../app/styles/images/freeCodeCamp.png" alt="FreeCodeCamp Logo"/>
+				</div>
+				<div className="container board-container">				
+					<Board 
+						isLoading={this.state.isLoading} 
+						fetchResults={this.state.fetchResults} 
+						onClickRequest={this.handleClickRequest} />
+				</div>
 			</div>
 		)
 	}
