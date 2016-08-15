@@ -6,18 +6,34 @@ var BoardContainer = React.createClass({
 	getInitialState: function () {
 		return {
 			isLoading: true,
-			// allTime
-			// lastThirty
+			fetchResults: {}
 		}
 	},
 	componentDidMount: function () {
-		// campFetcherCall
+		campFetcher('lastThirty')
+		.then(function (response) {
+			this.setState({
+				isLoading: false,
+				fetchResults: response
+			});			
+		}.bind(this));
 	},
-	// MAY NEED FUNCTION(S) FOR HANDLING INFO SWITCHING CLICK ON <BOARD />
+	handleClickRequest: function (e) {
+		campFetcher(e.target.id)
+		.then(function (response) {
+			this.setState({
+				isLoading: false,
+				fetchResults: response
+			});			
+		}.bind(this));
+	},
 	render: function () {
 		return (
-			<div className="row">				
-				<Board isLoading={this.state.isLoading} allTime={this.state.allTime} lastThirty={this.state.lastThirty} />
+			<div className="container">				
+				<Board 
+					isLoading={this.state.isLoading} 
+					fetchResults={this.state.fetchResults} 
+					onClickRequest={this.handleClickRequest} />
 			</div>
 		)
 	}
