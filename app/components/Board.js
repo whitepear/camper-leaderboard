@@ -24,17 +24,17 @@ function Board (props) {
 						<span className="leader-content">Leaderboard</span>
 					</div>
 					<div className="row header-row">
-						<div className="col-xs-1">#</div>
-						<div className="col-xs-5">Camper Name</div>
-						<div className="col-xs-3 text-center" ><span onClick={props.onClickRequest} id="lastThirty">Points in Past 30 Days</span></div>
-						<div className="col-xs-3 text-center"><span  onClick={props.onClickRequest} id="allTime">All-time Points</span></div>
+						<div className="col-xs-1 header-text"><span>#</span></div>
+						<div className="col-xs-5 header-text">Camper Name</div>
+						<div className="col-xs-3 header-text text-center" ><span onClick={props.onClickRequest} id="lastThirty">Points in Past 30 Days</span></div>
+						<div className="col-xs-3 header-text text-center"><span  onClick={props.onClickRequest} id="allTime">All-time Points</span></div>
 					</div>
 					{props.fetchResults.data.map(function (camper, index) {
 						return <div className="row info-row" key={keyGen()}>
-							<div className="col-xs-1 rank">{index + 1}</div>
-							<div className="col-xs-5"><a className="user-link" href={'https://www.freecodecamp.com/' + camper.username}><img src={camper.img} alt="Profile Image" className="user-img"/>{camper.username}</a></div>
-							<div className="col-xs-3 text-center points">{camper.recent}</div>
-							<div className="col-xs-3 text-center points">{camper.alltime}</div>	
+							<div className="col-xs-1">{index + 1}</div>
+							<div className="col-xs-5"><a href={'https://www.freecodecamp.com/' + camper.username}><img src={camper.img} alt="Profile Image" className="user-img"/>{camper.username}</a></div>
+							<div className="col-xs-3 text-center">{camper.recent}</div>
+							<div className="col-xs-3 text-center">{camper.alltime}</div>	
 						</div>
 					})}
 				</div>

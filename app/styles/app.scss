@@ -1,0 +1,125 @@
+body {
+	background: #542437;
+}
+
+.header {
+	background: #C02942;
+	height: 50px;
+
+	img {
+		height: 100%;
+		margin-left: 15px;
+	}
+}
+
+.board-container {
+	margin-top: 50px;
+	margin-bottom: 100px;
+	border-radius: 7px;	
+
+	.temp-leaderboard {
+		font-size: 20px;
+		font-family: 'Source Sans Pro', sans-serif;
+		//
+		//
+		// RIBBON STYLING START
+		.leader-title {
+			width: 107.5%;
+			padding: .34em 1em;
+			margin: 0;			
+			position: relative;
+			right: 3.75%;
+			color: #fff;
+			font-family: 'Cabin', sans-serif;
+			font-size: 32px;
+			text-align: center;
+			letter-spacing: 4px;
+			text-shadow: 0px -1px 0px rgba(0,0,0,0.3);
+			box-shadow: inset 0px 0px 20px rgba(0,0,0,0.1),
+												0px 1px 1px rgba(0,0,0,0.4);
+			background: #D95B43;
+	    display: inline-block;
+		}
+		
+		.leader-title:before, .leader-title:after {
+			content: "";
+			width: .2em;
+			bottom: -.5em;
+			position: absolute;
+			display: block;
+			border: .9em solid #D95B43;
+			box-shadow: 0px 1px 0px rgba(0,0,0,0.4);
+			z-index: -2;
+		}
+		
+		.leader-title:before {
+			left: -1.15em;
+			border-right-width: .75em;
+			border-left-color: transparent;
+		}
+		
+		.leader-title:after {
+			right: -1.15em;
+			border-left-width: .75em;
+			border-right-color: transparent;
+		}
+		
+		.leader-content:before, .leader-content:after {
+			content: "";
+			bottom: -.5em;
+			position: absolute;
+			display: block;
+			border-style: solid;
+			border-color: #BB3A22 transparent transparent transparent;
+			z-index: -1;
+		}
+		
+		.leader-content:before {
+		  left: 0;
+		  border-width: .5em 0 0 .5em;
+		}
+		
+		.leader-content:after {
+		  right: 0;
+		  border-width: .5em .5em 0 0;
+		}
+		// END RIBBON STYLING
+		//
+		//
+
+		.header-row {
+			background: #ECD078;
+			border-top: 1px solid #C5A748;
+			border-bottom: 1px solid #C5A748;
+			padding: 16px;
+
+			.header-text {
+				font-size: 24px;
+				font-weight: bold;
+
+				span {
+					position: relative;
+					right: 10px;
+				}
+			}
+
+			#allTime:hover, #lastThirty:hover {
+				cursor: pointer;
+				border-bottom: 1px solid #000;			
+			}
+		}
+		
+		.info-row {
+			@extend .header-row;
+			padding: 8px;
+		}		
+
+		.user-img {
+			height: 40px;
+			width: 40px;
+			border-radius: 3px;
+			border: 1px solid #000;
+			margin-right: 15px;
+		}		
+	}	
+}
