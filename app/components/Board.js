@@ -8,7 +8,6 @@ function keyGen () {
 }
 
 function Board (props) {	
-	console.log(props);
 	if (props.isLoading) {
 		return (
 			<div>Loading...</div>
@@ -21,12 +20,14 @@ function Board (props) {
 		} else {
 			return (
 				<div className="temp-leaderboard">
-					<div className="row text-center leader-title">Leaderboard</div>
+					<div className="row text-center leader-title">
+						<span className="leader-content">Leaderboard</span>
+					</div>
 					<div className="row">
 						<div className="col-md-1">#</div>
 						<div className="col-md-5">Camper Name</div>
-						<div className="col-md-3 text-center" onClick={props.onClickRequest} id="lastThirty">Points in Past 30 Days</div>
-						<div className="col-md-3 text-center" onClick={props.onClickRequest} id="allTime">All-time Points</div>
+						<div className="col-md-3 text-center" ><span onClick={props.onClickRequest} id="lastThirty">Points in Past 30 Days</span></div>
+						<div className="col-md-3 text-center"><span  onClick={props.onClickRequest} id="allTime">All-time Points</span></div>
 					</div>
 					{props.fetchResults.data.map(function (camper, index) {
 						return <div className="row" key={keyGen()}>
