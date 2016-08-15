@@ -31,7 +31,7 @@ var BoardContainer = React.createClass({
 		return (
 			<div>
 				<div className="header">
-					<img src="../app/styles/images/freeCodeCamp.png" alt="FreeCodeCamp Logo"/>
+					<a href="https://www.freecodecamp.com"><img src="../app/styles/images/freeCodeCamp.png" alt="FreeCodeCamp Logo"/></a>
 				</div>
 				<div className="container board-container">				
 					<Board 
