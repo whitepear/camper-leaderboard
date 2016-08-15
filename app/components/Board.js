@@ -8,6 +8,7 @@ function keyGen () {
 }
 
 function Board (props) {	
+	console.log(props);
 	if (props.isLoading) {
 		return (
 			<div>Loading...</div>
@@ -19,22 +20,20 @@ function Board (props) {
 			)
 		} else {
 			return (
-				<div>
-					<div className="row">
-						Leaderboard		
-					</div>
+				<div className="temp-leaderboard">
+					<div className="row text-center leader-title">Leaderboard</div>
 					<div className="row">
 						<div className="col-md-1">#</div>
 						<div className="col-md-5">Camper Name</div>
-						<div className="col-md-3" onClick={props.onClickRequest} id="lastThirty">Points in Past 30 Days</div>
-						<div className="col-md-3" onClick={props.onClickRequest} id="allTime">All-time Points</div>
+						<div className="col-md-3 text-center" onClick={props.onClickRequest} id="lastThirty">Points in Past 30 Days</div>
+						<div className="col-md-3 text-center" onClick={props.onClickRequest} id="allTime">All-time Points</div>
 					</div>
 					{props.fetchResults.data.map(function (camper, index) {
 						return <div className="row" key={keyGen()}>
 							<div className="col-md-1">{index + 1}</div>
-							<div className="col-md-5"><img src={camper.img} alt="Profile Image"/>{camper.username}</div>
-							<div className="col-md-3">{camper.recent}</div>
-							<div className="col-md-3">{camper.alltime}</div>	
+							<div className="col-md-5"><img src={camper.img} alt="Profile Image" className="user-img"/><a href={'https://www.freecodecamp.com/' + camper.username}>{camper.username}</a></div>
+							<div className="col-md-3 text-center">{camper.recent}</div>
+							<div className="col-md-3 text-center">{camper.alltime}</div>	
 						</div>
 					})}
 				</div>
