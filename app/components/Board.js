@@ -23,18 +23,18 @@ function Board (props) {
 					<div className="row text-center leader-title">
 						<span className="leader-content">Leaderboard</span>
 					</div>
-					<div className="row">
-						<div className="col-md-1">#</div>
-						<div className="col-md-5">Camper Name</div>
-						<div className="col-md-3 text-center" ><span onClick={props.onClickRequest} id="lastThirty">Points in Past 30 Days</span></div>
-						<div className="col-md-3 text-center"><span  onClick={props.onClickRequest} id="allTime">All-time Points</span></div>
+					<div className="row header-row">
+						<div className="col-xs-1">#</div>
+						<div className="col-xs-5">Camper Name</div>
+						<div className="col-xs-3 text-center" ><span onClick={props.onClickRequest} id="lastThirty">Points in Past 30 Days</span></div>
+						<div className="col-xs-3 text-center"><span  onClick={props.onClickRequest} id="allTime">All-time Points</span></div>
 					</div>
 					{props.fetchResults.data.map(function (camper, index) {
-						return <div className="row" key={keyGen()}>
-							<div className="col-md-1">{index + 1}</div>
-							<div className="col-md-5"><img src={camper.img} alt="Profile Image" className="user-img"/><a href={'https://www.freecodecamp.com/' + camper.username}>{camper.username}</a></div>
-							<div className="col-md-3 text-center">{camper.recent}</div>
-							<div className="col-md-3 text-center">{camper.alltime}</div>	
+						return <div className="row info-row" key={keyGen()}>
+							<div className="col-xs-1 rank">{index + 1}</div>
+							<div className="col-xs-5"><a className="user-link" href={'https://www.freecodecamp.com/' + camper.username}><img src={camper.img} alt="Profile Image" className="user-img"/>{camper.username}</a></div>
+							<div className="col-xs-3 text-center points">{camper.recent}</div>
+							<div className="col-xs-3 text-center points">{camper.alltime}</div>	
 						</div>
 					})}
 				</div>
