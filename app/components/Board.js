@@ -26,7 +26,7 @@ function Board (props) {
 					<div className="row header-row">
 						<div className="col-xs-1 header-text"><span>#</span></div>						
 						<div className="col-xs-4 col-sm-5 header-text">Camper Name</div>
-						<div className="col-xs-3 header-text text-center" ><span onClick={props.onClickRequest} id="lastThirty"><span className="hidden-xs">Points in Past 30 Days</span><span className="visible-xs">Points (30 Days)</span></span></div>
+						<div className="col-xs-3 header-text text-center" ><span onClick={props.onClickRequest} id="lastThirty">Points (Past 30 Days)</span></div>
 						<div className="col-xs-3 header-text text-center"><span  onClick={props.onClickRequest} id="allTime">All-time Points</span></div>
 					</div>
 					{props.fetchResults.data.map(function (camper, index) {
